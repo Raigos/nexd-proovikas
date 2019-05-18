@@ -1,0 +1,177 @@
+/**
+ * CONTENTS
+ *
+ *
+ * Reset......................Resets HTML default Values
+ * Mixin......................Our custom Mixin Values
+ *
+ *
+ * Root.......................Root Valuables
+ * Body.......................Body & Generic Values
+ * Header.....................Header Values
+ *
+ * 
+ * Buttons....................Values for Buttons
+ * App........................Value for form container.
+ *
+ *
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #LIBRARIES
+\*------------------------------------*/
+
+@import './reset';
+@import './mixins';
+
+
+
+
+
+/*------------------------------------*\
+  #Root
+\*------------------------------------*/
+
+:root {
+  --bg: #1F2734;
+  --yellow: #FCAF19;
+  --white: #E5E5E5;
+  --btnWhite: #CED4DD;
+  --formBtnWhite: #FFFFFF;
+  --btnBlue: #3388FF;
+  --btnDisCo: #9EAAB9;
+  --border: #54637C;
+  --formBg: #3E4A5E;
+  --shadow: rgba(23, 25, 28, 0.3);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Body 
+\*------------------------------------*/
+
+
+body {
+  background-color: var(--bg);
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Header 
+\*------------------------------------*/
+
+header {
+  margin: 56px 45px 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  border-bottom: 1px solid var(--border);
+
+  >* {
+    margin: 20px 15px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Headings 
+\*------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--yellow);
+}
+
+h1 {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 18px;
+  ;
+  color: var(--white);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Buttons 
+\*------------------------------------*/
+
+.btn {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 18px;
+
+  border-radius: 3px;
+  padding: 7px 40px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  width: 104px;
+  height: 32px;
+
+  @include flexCenter();
+
+  a {
+    text-decoration: none;
+  }
+
+  &:active {
+    border: 1px solid var(--btnWhite);
+  }
+}
+
+.btn-disabled {
+  background-color: var(--formBg);
+  color: var(--btnDisCo);
+}
+
+.btn-active {
+  color: var(--btnWhite);
+  background-color: var(--btnBlue);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #App
+\*------------------------------------*/
+
+.app {
+
+  &__body {
+    padding: 0 45px;
+  }
+}

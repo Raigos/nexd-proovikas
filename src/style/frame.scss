@@ -1,0 +1,217 @@
+/**
+ * CONTENTS
+ *
+ *
+ * Frame
+ * Frame.....................Values for whole frame
+ * Form......................Values for form 
+ * Inputs....................values for Inputs 
+ * Buttons...................Form Buttons values
+ * Post-Form.................Values for text after clicking
+ *
+ *
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #Frame
+\*------------------------------------*/
+
+@import './mixins';
+@import './app';
+
+.frame {
+  box-shadow: 0px 0px 20px var(--shadow);
+  border: 1px solid var(--border);
+  display: inline-block;
+  border-radius: 2px;
+  padding: 32px;
+  height: 400px;
+  width: 512px;
+
+  h2 {
+    color: var(--yellow);
+    text-align: center;
+    line-height: 23px;
+    font-size: 18px;
+  }
+
+  h3 {
+    color: var(--btnWhite);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 5px;
+  }
+
+  form {
+    border-top: 1px solid var(--border);
+    padding: 16px 40px 24px 32px;
+
+    display: grid;
+    align-items: center;
+    grid-gap: 24px 54px;
+    grid-template-areas:
+      "name   form__nameInput"
+      "device deviceInput"
+      "size   sizeInput"
+      ".      sizeInput"
+      "hr     hr"
+      ".      btn";
+  }
+}
+
+hr {
+  grid-area: hr;
+  margin: 0 -40px 0 -32px;
+  border-color: var(--border);
+}
+
+
+
+
+
+
+/*------------------------------------*\
+  #Forms
+\*------------------------------------*/
+
+.form__input {
+  padding: 6px 7px 7px 7px;
+  color: var(--btnWhite);
+  align-items: center;
+  line-height: 18px;
+  font-size: 14px;
+  display: flex;
+  height: 32px;
+  background-color: var(--formBg);
+  border: 1px solid var(--formBg);
+}
+
+.sizeInput .form__input {
+  width: 104px
+}
+
+.form__name {
+  grid-area: name;
+}
+
+.form__nameInput {
+  grid-area: form__nameInput;
+}
+
+.form__size {
+  grid-area: size;
+}
+
+
+.form-disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+.form-enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Inputs
+\*------------------------------------*/
+
+.deviceInput {
+  display: grid;
+  grid-area: deviceInput;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.sizeInput {
+  display: grid;
+  grid-gap: 16px;
+  grid-area: sizeInput;
+  grid-template-columns: 1fr 1fr;
+
+  span {
+    @include flexCenter();
+
+    input {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Buttons
+\*------------------------------------*/
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4px 40px 0 40px;
+  grid-area: btn;
+
+  a {
+    color: var(--yellow);
+    line-height: 18px;
+    font-size: 14px;
+    margin: 0 23px;
+  }
+
+  button {
+    color: var(--formBtnWhite);
+  }
+}
+
+.btn__noform {
+  padding-right: 0;
+}
+
+.btn__submit {
+  padding: 7px 16px;
+  height: 32px;
+  width: auto;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Post-Form
+\*------------------------------------*/
+
+.value__screens {
+  padding: 0 6px;
+}
+
+.x {
+  padding: 0 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+.values {
+  display: flex;
+}
+
+
+
+
+

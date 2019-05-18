@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+
+import './style/App.scss';
+import frame from './components/frame';
+import preFrame from './components/preFrame';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <>
+
+        <header>
+          <h1>My Creatives</h1>
+          <NavLink to="/frame">
+            <button className="btn  btn-active">
+              Add
+            </button>
+          </NavLink>
+        </header>
+
+        <section className="app__body">
+        <Route exact path="/" component={preFrame}/>
+        <Route path="/frame" component={frame}/>
+        </section>
+
+      </>
+    </HashRouter>
   );
 }
 

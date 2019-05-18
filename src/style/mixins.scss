@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  #Mixin
+\*------------------------------------*/
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBtw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
